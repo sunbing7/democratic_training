@@ -1,1 +1,3 @@
-# democratic_training
+# Democratic Training
+
+Coming Soon
