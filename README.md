@@ -30,7 +30,9 @@ Run `bash ./test_uap.sh` to test the generated targeted UAPs for different targe
 
 ## Pre-trained Models for Testing
 
-[cifar10-wideresnet](https://figshare.com/s/51d4ce8b1ab552e57bd2)
+Original model: [cifar10-wideresnet](https://figshare.com/s/51d4ce8b1ab552e57bd2)
+
+Enhanced model: [cifar10-widresnet-repaired](https://figshare.com/s/94c00df1284ee9f40bd1)
 
 ## Citation
 ```
