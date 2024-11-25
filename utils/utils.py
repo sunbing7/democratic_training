@@ -5,7 +5,7 @@ import torch
 import json
 import numpy as np
 
-from config.config import RESULT_PATH, MODEL_PATH, PROJECT_PATH, UAP_PATH, NEURON_PATH, ATTRIBUTION_PATH
+from config.config import RESULT_PATH, MODEL_PATH, PROJECT_PATH, UAP_PATH
 
 def get_model_path(dataset_name, network_arch, random_seed):
     if not os.path.isdir(MODEL_PATH):
@@ -22,32 +22,6 @@ def get_uap_path(uap_data, model_data, network_arch, random_seed):
     model_path = os.path.join(UAP_PATH, "{}_{}_{}_{}".format(uap_data, model_data, network_arch, random_seed))
     if not os.path.isdir(model_path):
         os.makedirs(model_path)
-    return model_path
-
-
-def get_neuron_path():
-    if not os.path.isdir(NEURON_PATH):
-        os.makedirs(NEURON_PATH)
-    return NEURON_PATH
-
-
-def get_attribution_path():
-    if not os.path.isdir(ATTRIBUTION_PATH):
-        os.makedirs(ATTRIBUTION_PATH)
-    return ATTRIBUTION_PATH
-
-
-def get_neuron_name(uap_data, uap_arch, filter_data, filter_arch, random_seed):
-    if not os.path.isdir(NEURON_PATH):
-        os.makedirs(NEURON_PATH)
-    model_path = "{}_{}_{}_{}_{}_outstanding.npy".format(uap_data, uap_arch, filter_data, filter_arch, random_seed)
-    return model_path
-
-
-def get_attribution_name(uap_data, uap_arch, random_seed):
-    if not os.path.isdir(ATTRIBUTION_PATH):
-        os.makedirs(ATTRIBUTION_PATH)
-    model_path = "{}_{}_{}_attribution.npy".format(uap_data, uap_arch, random_seed)
     return model_path
 
 

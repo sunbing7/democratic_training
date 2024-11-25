@@ -446,28 +446,6 @@ def fix_labels_nips_class(test_set, pytorch=False, target_flag=False, cur_class=
     return test_set
 
 
-def fix_ground_truth(test_set):
-    filenames = [i.split('/')[-1] for i, j in test_set.samples]
-    val_dict = {}
-    val = []
-    groudtruth = os.path.join(IMAGENET_PATH, 'validation/ILSVRC2012_validation_ground_truth.txt')
-
-    with open(groudtruth) as file:
-        for line in file:
-            val.append(int(line))
-
-    for f, i in zip(filenames, range(len(filenames))):
-        val_dict[f] = val[i]
-
-    new_data_samples = []
-    for i, j in enumerate(test_set.samples):
-        org_label = val_dict[test_set.samples[i][0].split('/')[-1]]
-        new_data_samples.append((test_set.samples[i][0], org_label))
-
-    test_set.samples = new_data_samples
-    return test_set
-
-
 def fix_labels(test_set):
     val_dict = {}
     groudtruth = os.path.join(IMAGENET_PATH, 'validation/classes.txt')

@@ -6,10 +6,10 @@ import torch
 import argparse
 import torch.backends.cudnn as cudnn
 
-from utils.data import get_data_specs, get_data, get_data_class, Normalizer
-from utils.utils import get_model_path, gap_normalize_and_scale, get_uap_path, get_attribution_path, init_patch_square
-from utils.network import get_network, set_parameter_requires_grad
-from utils.network import get_num_parameters, get_num_non_trainable_parameters, get_num_trainable_parameters
+from utils.data import get_data_specs, get_data, Normalizer
+from utils.utils import get_model_path, get_uap_path
+from utils.network import get_network
+from utils.network import get_num_parameters, get_num_trainable_parameters
 from utils.custom_loss import LogitLoss, BoundedLogitLoss, NegativeCrossEntropy, BoundedLogitLossFixedRef, BoundedLogitLoss_neg
 from collections import OrderedDict
 from utils.training import *
